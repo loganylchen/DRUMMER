@@ -164,6 +164,8 @@ def return_top3_transcripts(path):
     onlyfiles = [f for f in listdir(path) if isfile(join(path, f))]
     for i in onlyfiles:
         current_df = pd.read_csv(path+i,sep = '\t',usecols = ['depth_ctrl','depth_treat'])
+        if current_df.shape[0]==0:
+            continue
         current_df['mean'] = current_df.mean(axis = 1)
         max_mean = max(current_df['mean'])
         transcript_max[i] = max_mean

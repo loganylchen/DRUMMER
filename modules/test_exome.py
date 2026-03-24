@@ -30,7 +30,7 @@ import shutil
 devnull = open(os.devnull, 'w')
 def exome_mode(transcriptome_file,transcript_directory):
     length_dictionary = {}
-    f_open = open(transcriptome_file,'rU')
+    f_open = open(transcriptome_file,'r')
     for rec in SeqIO.parse(f_open,'fasta'):
         id = rec.id
         seq = rec.seq

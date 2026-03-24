@@ -5,7 +5,7 @@ parser = argparse.ArgumentParser(description="Split the fasta file into individu
 parser.add_argument('-f', action='store', dest='fasta_file', help='Input fasta file')
 result = parser.parse_args()
 
-f_open = open(result.fasta_file, "rU")
+f_open = open(result.fasta_file, "r")
 
 for rec in SeqIO.parse(f_open, "fasta"):
    id = rec.id

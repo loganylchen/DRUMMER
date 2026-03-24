@@ -32,7 +32,7 @@ from functools import reduce
 import shutil
 
 def isoform_mode(transcriptome_file,transcript_directory,path_transcripts):
-    f_open = open(transcriptome_file, "rU")
+    f_open = open(transcriptome_file, "r")
     length_dictionary = {}
     for rec in SeqIO.parse(f_open, "fasta"):
         id = rec.id
